@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ethan Debeb — Aerospace Engineering Portfolio</title>
+<meta name="description" content="Ethan Debeb — aerospace engineering student portfolio: UAV research, AIAA publication, FIRST Tech Challenge, and CAD design work.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0c1620;
+    --panel: #111f2e;
+    --panel-raised: #16283b;
+    --line: #223349;
+    --text: #e7edf3;
+    --text-dim: #85a0b5;
+    --accent: #ff5a1f;      /* recovery-system safety orange */
+    --accent-dim: #b8431a;
+    --cyan: #5fc6df;        /* blueprint / telemetry cyan */
+    --cyan-dim: #2f5866;
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+
+  html{ scroll-behavior:smooth; }
+
+  body{
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  body::before{
+    content:"";
+    position:fixed; inset:0;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity:0.12;
+    pointer-events:none;
+    z-index:0;
+  }
+
+  a{ color:inherit; text-decoration:none; }
+  section{ position:relative; z-index:1; }
+
+  .mono{ font-family: var(--font-mono); }
+  .eyebrow{
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--cyan);
+  }
+
+  /* ---------- MISSION NAV ---------- */
+  .mission-nav{
+    position: fixed;
+    top:0; left:0; right:0;
+    z-index: 50;
+    background: rgba(12,22,32,0.85);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .mission-nav-inner{
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 14px 32px;
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .mission-nav .brand{
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.01em;
+    white-space:nowrap;
+  }
+  .mission-nav .brand span{ color: var(--accent); }
+
+  .timeline{
+    display:flex;
+    align-items:center;
+    flex:1;
+    max-width: 720px;
+    position: relative;
+  }
+  .timeline::before{
+    content:"";
+    position:absolute;
+    left:0; right:0; top:50%;
+    height:1px;
+    background: var(--line);
+  }
+  .timeline a{
+    position:relative;
+    flex:1;
+    text-align:center;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    color: var(--text-dim);
+    padding: 8px 4px;
+    transition: color 0.2s ease;
+  }
+  .timeline a::before{
+    content:"";
+    position:absolute;
+    top:50%; left:50%;
+    transform: translate(-50%,-50%);
+    width:7px; height:7px;
+    border-radius:50%;
+    background: var(--bg);
+    border: 1.5px solid var(--text-dim);
+    transition: all 0.2s ease;
+  }
+  .timeline a:hover{ color: var(--cyan); }
+  .timeline a:hover::before{ border-color: var(--cyan); background: var(--cyan); }
+  .timeline a .stage{ display:block; color: var(--text); font-size:0.62rem; margin-top:2px; }
+
+  .nav-toggle{ display:none; }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    min-height: 100vh;
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    padding: 120px 32px 80px;
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 56px;
+    align-items:center;
+  }
+  .hero .eyebrow{ margin-bottom: 18px; }
+  .hero h1{
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(2.6rem, 5vw, 4.4rem);
+    line-height: 1.02;
+    letter-spacing: -0.01em;
+  }
+  .hero h1 .accent{ color: var(--accent); }
+  .hero p.lede{
+    margin-top: 22px;
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    max-width: 46ch;
+  }
+  .hero-actions{
+    margin-top: 32px;
+    display:flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .btn{
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    padding: 12px 20px;
+    border-radius: 3px;
+    border: 1px solid var(--line);
+    transition: all 0.2s ease;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+  }
+  .btn-primary{ background: var(--accent); border-color: var(--accent); color: #14090300; color:#160a04; font-weight:600; }
+  .btn-primary:hover{ background: #ff7440; }
+  .btn-secondary{ color: var(--text); }
+  .btn-secondary:hover{ border-color: var(--cyan); color: var(--cyan); }
+
+  /* data plate */
+  .data-plate{
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 22px 24px;
+    position: relative;
+  }
+  .data-plate::before{
+    content: attr(data-tag);
+    position:absolute;
+    top:-11px; left:16px;
+    background: var(--bg);
+    padding: 0 8px;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    color: var(--cyan);
+  }
+  .data-plate .row{
+    display:flex;
+    justify-content: space-between;
+    padding: 9px 0;
+    border-bottom: 1px dashed var(--line);
+    font-size: 0.85rem;
+  }
+  .data-plate .row:last-child{ border-bottom:none; }
+  .data-plate .row .k{ color: var(--text-dim); font-family: var(--font-mono); font-size:0.76rem; }
+  .data-plate .row .v{ font-family: var(--font-mono); font-weight:500; }
+
+  /* trajectory svg */
+  .trajectory{ width:100%; height:auto; margin-top: 18px; }
+  .trajectory path.curve{
+    fill:none; stroke: var(--accent); stroke-width:2;
+    stroke-dasharray: 600; stroke-dashoffset: 600;
+    animation: draw 2.2s ease forwards 0.4s;
+  }
+  .trajectory .grid-line{ stroke: var(--line); stroke-width:1; }
+  .trajectory .dot{ fill: var(--cyan); opacity:0; animation: fadeIn 0.6s ease forwards 2.2s; }
+  .trajectory text{ fill: var(--text-dim); font-family: var(--font-mono); font-size: 8px; }
+
+  @keyframes draw{ to{ stroke-dashoffset:0; } }
+  @keyframes fadeIn{ to{ opacity:1; } }
+
+  /* ---------- SECTION SHELL ---------- */
+  .section{
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 110px 32px;
+    border-top: 1px solid var(--line);
+  }
+  .section-head{
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+    margin-bottom: 52px;
+    flex-wrap: wrap;
+  }
+  .section-head h2{
+    font-family: var(--font-display);
+    font-size: clamp(1.7rem, 3vw, 2.4rem);
+    font-weight: 600;
+    margin-top: 6px;
+  }
+  .section-head .stage-code{
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    text-align:right;
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+  .about-grid p{ color: var(--text-dim); margin-bottom: 16px; }
+  .about-grid p strong{ color: var(--text); font-weight:600; }
+  .stat-strip{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    margin-top: 8px;
+  }
+  .stat{
+    background: var(--panel);
+    padding: 18px 16px;
+  }
+  .stat .num{ font-family: var(--font-mono); font-size:1.5rem; font-weight:600; color: var(--accent); }
+  .stat .label{ font-size:0.72rem; color: var(--text-dim); text-transform:uppercase; letter-spacing:0.05em; margin-top:4px; }
+
+  .credentials{
+    display:flex;
+    flex-wrap:wrap;
+    gap: 10px;
+    margin-top: 16px;
+  }
+  .credential{
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.03em;
+    color: var(--cyan);
+    border: 1px solid var(--cyan-dim);
+    border-radius: 3px;
+    padding: 6px 12px;
+    background: var(--panel);
+  }
+
+  /* ---------- CARDS (research / robotics / cad) ---------- */
+  .card-list{ display:flex; flex-direction:column; gap: 1px; background: var(--line); border:1px solid var(--line); }
+  .card{
+    background: var(--panel);
+    padding: 32px;
+    display:grid;
+    grid-template-columns: 100px 1fr;
+    gap: 28px;
+    transition: background 0.2s ease;
+  }
+  .card:hover{ background: var(--panel-raised); }
+  .card .tag{
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--cyan);
+    border: 1px solid var(--cyan-dim);
+    padding: 5px 8px;
+    border-radius: 3px;
+    align-self: start;
+    text-align:center;
+    height: fit-content;
+  }
+  .card h3{ font-family: var(--font-display); font-size: 1.2rem; font-weight:600; margin-bottom: 8px; }
+  .card p{ color: var(--text-dim); font-size: 0.94rem; margin-bottom: 12px; }
+  .card .meta{
+    display:flex; gap: 18px; flex-wrap:wrap;
+    font-family: var(--font-mono); font-size: 0.74rem; color: var(--text-dim);
+    margin-top: 10px;
+  }
+  .card .meta a{ color: var(--cyan); }
+  .card .meta a:hover{ text-decoration: underline; }
+
+  .award-seasons{ margin-top: 18px; display:flex; flex-direction:column; gap:16px; }
+  .award-season{ border-left: 2px solid var(--cyan-dim); padding-left: 16px; }
+  .award-season .season-label{
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    color: var(--cyan);
+    letter-spacing: 0.04em;
+    margin-bottom: 6px;
+  }
+  .award-season ul{ list-style:none; }
+  .award-season li{
+    font-size: 0.86rem;
+    color: var(--text-dim);
+    padding: 3px 0;
+  }
+  .award-season li .place{ color: var(--text); }
+  .award-season li::before{ content:"— "; color: var(--accent); }
+
+  /* ---------- CAD GRID ---------- */
+  .cad-grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+    gap: 24px;
+  }
+  .cad-tile{
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    overflow:hidden;
+  }
+  .cad-tile .thumb{
+    aspect-ratio: 4/3;
+    background:
+      repeating-linear-gradient(45deg, var(--panel-raised) 0 2px, transparent 2px 14px),
+      var(--panel-raised);
+    display:flex; align-items:center; justify-content:center;
+    color: var(--text-dim);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    text-align:center;
+    padding: 12px;
+    overflow: hidden;
+    position: relative;
+  }
+  .cad-tile .thumb img{
+    width: 100%; height: 100%;
+    object-fit: contain;
+    background: #fff;
+  }
+  .cad-tile .inset{
+    position: absolute;
+    bottom: 10px; right: 10px;
+    width: 34%;
+    aspect-ratio: 4/3;
+    border: 2px solid var(--accent);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.5);
+  }
+  .cad-tile .inset img{ width:100%; height:100%; object-fit: cover; background:#fff; }
+  .cad-tile .inset-label{
+    position: absolute;
+    bottom: 10px; left: 10px;
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--accent);
+    background: rgba(12,22,32,0.85);
+    padding: 3px 6px;
+    border-radius: 2px;
+    letter-spacing: 0.04em;
+  }
+  .cad-tile .info{ padding: 16px 18px; }
+  .cad-tile h4{ font-family: var(--font-display); font-size: 1rem; margin-bottom: 4px; }
+  .cad-tile p{ color: var(--text-dim); font-size: 0.85rem; }
+
+  /* ---------- SKILLS ---------- */
+  .skills-wrap{ display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 32px; }
+  .skill-col .eyebrow{ margin-bottom: 14px; display:block; }
+  .skill-col ul{ list-style:none; }
+  .skill-col li{
+    font-family: var(--font-mono);
+    font-size: 0.88rem;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--line);
+    display:flex;
+    justify-content: space-between;
+  }
+  .skill-col li .bar{
+    width: 90px;
+    height: 4px;
+    background: var(--line);
+    position: relative;
+    align-self:center;
+  }
+  .skill-col li .bar::after{
+    content:"";
+    position:absolute; left:0; top:0; bottom:0;
+    width: var(--pct, 70%);
+    background: var(--accent);
+  }
+
+  /* ---------- CONTACT ---------- */
+  .contact-panel{
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 48px;
+    display:grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+    align-items:center;
+  }
+  .contact-panel h2{ font-family: var(--font-display); font-size: 1.8rem; margin-bottom: 14px; }
+  .contact-panel p{ color: var(--text-dim); max-width: 46ch; }
+  .contact-links{ display:flex; flex-direction:column; gap: 12px; }
+  .contact-links a{
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    padding: 12px 16px;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    display:flex; justify-content:space-between; align-items:center;
+    transition: all 0.2s ease;
+  }
+  .contact-links a:hover{ border-color: var(--cyan); color: var(--cyan); }
+
+  footer{
+    text-align:center;
+    padding: 32px;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    border-top: 1px solid var(--line);
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 860px){
+    .hero-grid{ grid-template-columns: 1fr; }
+    .about-grid{ grid-template-columns: 1fr; }
+    .contact-panel{ grid-template-columns: 1fr; padding: 32px; }
+    .card{ grid-template-columns: 1fr; }
+    .card .tag{ width: fit-content; }
+    .timeline{ display:none; }
+    .mission-nav-inner{ justify-content:space-between; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    .trajectory path.curve{ animation:none; stroke-dashoffset:0; }
+    .trajectory .dot{ animation:none; opacity:1; }
+    .reveal{ opacity:1 !important; transform:none !important; }
+  }
+
+  /* scroll reveal */
+  .reveal{ opacity:0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+</style>
+</head>
+<body>
+
+<nav class="mission-nav">
+  <div class="mission-nav-inner">
+    <div class="brand">ETHAN DEBEB<span>.</span></div>
+    <div class="timeline">
+      <a href="#about">T-3<span class="stage">FOUNDATIONS</span></a>
+      <a href="#research">T-2<span class="stage">RESEARCH</span></a>
+      <a href="#publication">T-1<span class="stage">AIAA</span></a>
+      <a href="#robotics">T+0<span class="stage">FTC</span></a>
+      <a href="#cad">T+1<span class="stage">CAD</span></a>
+      <a href="#contact">T+2<span class="stage">CONTACT</span></a>
+    </div>
+    <a href="#contact" class="btn btn-secondary" style="white-space:nowrap;">Get in touch</a>
+  </div>
+</nav>
+
+<section class="hero" id="top">
+  <div class="hero-grid">
+    <div>
+      <div class="eyebrow">// Aerospace Engineering — Incoming @ Purdue</div>
+      <h1>Ethan Debeb<br><span class="accent">builds & tests</span><br>flight systems.</h1>
+      <p class="lede">Aerospace engineering student with hands-on UAV research, a pending AIAA publication, four seasons of competitive robotics leadership, and CAD design experience. Headed to Purdue this fall — looking to fly with PART.</p>
+      <div class="hero-actions">
+        <a href="#research" class="btn btn-primary">View the work</a>
+        <a href="resume.pdf" class="btn btn-secondary">Download resume ↓</a>
+      </div>
+    </div>
+    <div>
+      <div class="data-plate" data-tag="STATUS">
+        <div class="row"><span class="k">LOCATION</span><span class="v">Marietta, GA</span></div>
+        <div class="row"><span class="k">TARGET</span><span class="v">Purdue University — AAE</span></div>
+        <div class="row"><span class="k">TEAM</span><span class="v">PART (incoming)</span></div>
+        <div class="row"><span class="k">PUBLICATION</span><span class="v">AIAA Aviation Forum, 2026</span></div>
+        <div class="row"><span class="k">TOOLING</span><span class="v">SOLIDWORKS · OnShape · Python</span></div>
+      </div>
+      <svg class="trajectory" viewBox="0 0 340 160">
+        <line class="grid-line" x1="20" y1="140" x2="320" y2="140"/>
+        <line class="grid-line" x1="20" y1="20" x2="20" y2="140"/>
+        <path class="curve" d="M20,140 C 90,135 150,40 200,25 C 250,12 290,30 320,60"/>
+        <circle class="dot" cx="320" cy="60" r="4"/>
+        <text x="24" y="152">T+0</text>
+        <text x="290" y="152">APOGEE</text>
+        <text x="4" y="30">ALT</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="section reveal" id="about">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">T-3 · Foundations</div>
+      <h2>About</h2>
+    </div>
+    <div class="stage-code mono">Wheeler HS STEM Magnet<br>Class of 2026</div>
+  </div>
+  <div class="about-grid">
+    <div>
+      <p><strong>Aerospace engineer in training, drawn to the intersection of unmanned aircraft systems and mechanical design — where a good idea only counts once it's been modeled, tested, and flown.</strong></p>
+      <p>That approach comes from two years of iterating hardware under real constraints: refining a UAV payload mechanism through CAD and FEA until the numbers held up, and leading a robotics sub-team through four seasons of build-test-rebuild cycles under competition deadlines. Graduated with a 4.0 GPA and a 36 ACT score, and currently Co-President of the Students In Space Club, coordinating projects and competitions including the 2025 Canada Space Design Competition and the 2024 Georgia Tech/NASA Payload Challenge.</p>
+      <p>Incoming aerospace engineering student at Purdue University, planning to join PART (Purdue Aerospace and Rocketry Team) to continue hands-on propulsion and vehicle design work.</p>
+    </div>
+    <div>
+      <div class="stat-strip">
+        <div class="stat"><div class="num">01</div><div class="label">AIAA Publication</div></div>
+        <div class="stat"><div class="num">4</div><div class="label">Robotics Seasons</div></div>
+        <div class="stat"><div class="num">[#]</div><div class="label">CAD Projects</div></div>
+      </div>
+      <div class="credentials">
+        <span class="credential">AIAA Member</span>
+        <span class="credential">NSBE Member</span>
+        <span class="credential">Davidson Fellow</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section reveal" id="research">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">T-2 · Research</div>
+      <h2>Research</h2>
+    </div>
+    <div class="stage-code mono">Kennesaw State University AERO Lab</div>
+  </div>
+  <div class="card-list">
+    <div class="card">
+      <div class="tag">CAPSTONE</div>
+      <div>
+        <h3>Developing a Life Jacket Delivery System for UAVs</h3>
+        <p>Designed a servo-actuated payload release mechanism to carry and accurately deploy a life jacket from a multirotor UAV, aimed at cutting response time in drowning emergencies where surveillance and traditional flotation delivery can't reach. Iterated the design in SOLIDWORKS, settled on a linkage-based latch driven by an MG996R torque servo, and validated it with a successful flight test. FEA on the final assembly found the linkage bar reached its allowable stress at a 6.5 kg load — below the 25 kg carrying-capacity target — identifying where the next design iteration needs to strengthen the mechanism.</p>
+        <div class="meta">
+          <span>Aerospace Research Intern · Kennesaw State University AERO Lab · July 2025 – Present</span>
+          <a href="[LINK]">View writeup →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section reveal" id="publication">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">T-1 · Publication</div>
+      <h2>AIAA Publication</h2>
+    </div>
+    <div class="stage-code mono">Peer-reviewed / Conference</div>
+  </div>
+  <div class="card-list">
+    <div class="card">
+      <div class="tag">AIAA</div>
+      <div>
+        <h3>"Real-Time Vehicle Detection and Enumeration Using Unmanned Aerial Systems"</h3>
+        <p>Built a real-time vehicle detection and counting framework combining the YOLOv12 object detection model with aerial imagery from a UAS platform, fine-tuned on the VisDrone dataset to handle varying altitudes, lighting, and dense urban scenes. Achieved detection accuracy and frame rates suitable for real-time use, aimed at automated traffic analytics and aerial surveillance applications.</p>
+        <div class="meta">
+          <span>AIAA Aviation Forum · San Diego, CA · June 8–12, 2026</span>
+          <span>Co-authors: O. Ahmed, A. Khalid</span>
+          <a href="https://doi.org/10.2514/6.2026-4753">Read paper (DOI) →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section reveal" id="robotics">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">T+0 · Competition</div>
+      <h2>FIRST Tech Challenge</h2>
+    </div>
+    <div class="stage-code mono">Team 1002 Surge — CircuitRunners</div>
+  </div>
+  <div class="card-list">
+    <div class="card">
+      <div class="tag">DESIGN</div>
+      <div>
+        <h3>Marketing Lead · Designer & CAD Builder · Drive Coach</h3>
+        <p>Directs team marketing strategy to promote robotics to outside audiences, designs and builds robot mechanisms, and develops in-match competition strategy as drive coach. Led the design sub-team to two qualifying world championships and three state championships, and mentors newer members on build accuracy, troubleshooting, and integrating hardware with software. Team has reached the FIRST Robotics World Championship in 2026, 2024, and 2023.</p>
+        <div class="meta">
+          <span>FIRST Tech Challenge · Team 1002 Surge, CircuitRunners Robotics, Inc. · SY2022–Present</span>
+        </div>
+        <div class="award-seasons">
+          <div class="award-season">
+            <div class="season-label">2026 — DECODE</div>
+            <ul>
+              <li><span class="place">Innovate Award, 2nd Place</span> — FIRST Championship, Houston, TX</li>
+              <li><span class="place">Inspire Award, 2nd Place</span> — Georgia Championship</li>
+              <li><span class="place">Inspire Award, 2nd Place & Winning Alliance (1st team selected)</span> — Northwest League Tournament</li>
+            </ul>
+          </div>
+          <div class="award-season">
+            <div class="season-label">2024 — INTO THE DEEP</div>
+            <ul>
+              <li>Chicago Robotics Invitational Premier Event</li>
+              <li>Georgia State Championship</li>
+              <li><span class="place">Inspire Award & Winning Alliance Captain</span> — Athens–Marietta League Tournament</li>
+            </ul>
+          </div>
+          <div class="award-season">
+            <div class="season-label">2023 — CENTERSTAGE</div>
+            <ul>
+              <li><span class="place">Innovate Award</span> — FIRST Championship, Houston, TX</li>
+              <li><span class="place">Innovate Award</span> — Alabama State Championship</li>
+              <li><span class="place">Inspire Award & Winning Alliance Captain</span> — Georgia State Championship</li>
+              <li><span class="place">Inspire Award & Winning Alliance Captain</span> — West Georgia League Tournament</li>
+            </ul>
+          </div>
+          <div class="award-season">
+            <div class="season-label">2022 — POWER PLAY</div>
+            <ul>
+              <li><span class="place">3rd Place Innovate Award</span> — FIRST Championship, Houston, TX</li>
+              <li><span class="place">Innovate Award</span> — Alabama State Championship</li>
+              <li><span class="place">Inspire Award & Winning Alliance Captain</span> — Georgia State Championship</li>
+              <li><span class="place">Inspire Award</span> — West GA League Tournament</li>
+            </ul>
+          </div>
+        </div>
+        <div class="meta">
+          <a href="[LINK TO TEAM SITE / VIDEO]">Team page →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section reveal" id="cad">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">T+1 · Design</div>
+      <h2>SOLIDWORKS Projects</h2>
+    </div>
+    <div class="stage-code mono">CAD Portfolio</div>
+  </div>
+  <div class="cad-grid">
+    <div class="cad-tile">
+      <div class="thumb"><img src="life-jacket-delivery.png" alt="CAD render of the life jacket delivery mechanism"></div>
+      <div class="info">
+        <h4>Life Jacket Delivery System</h4>
+        <p>Servo-actuated payload release mechanism for UAV-based flotation delivery — see the Research section for full writeup.</p>
+      </div>
+    </div>
+    <div class="cad-tile">
+      <div class="thumb"><img src="chipi-claw.png" alt="CAD render of the claw end-effector, Ethan's subsystem on Chipi"></div>
+      <div class="info">
+        <h4>Chipi Robot</h4>
+        <p>Competition robot design for CircuitRunners Robotics (FTC Team 1002 Surge), 2024 Into the Deep season. Owned design of the claw end-effector.</p>
+      </div>
+    </div>
+    <div class="cad-tile">
+      <div class="thumb"><img src="zerotolerance.png" alt="CAD render of the ZeroTolerance competition robot"></div>
+      <div class="info">
+        <h4>ZeroTolerance</h4>
+        <p>Competition robot design for CircuitRunners Robotics (FTC Team 1002 Surge), 2023 Centerstage season. Owned design of the drive base (drivetrain).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section reveal" id="skills">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">Reference</div>
+      <h2>Skills & Tools</h2>
+    </div>
+  </div>
+  <div class="skills-wrap">
+    <div class="skill-col">
+      <span class="eyebrow">Design & CAD</span>
+      <ul>
+        <li>SOLIDWORKS <div class="bar" style="--pct:90%"></div></li>
+        <li>OnShape CAD <div class="bar" style="--pct:75%"></div></li>
+        <li>FEA / Simulation <div class="bar" style="--pct:65%"></div></li>
+      </ul>
+    </div>
+    <div class="skill-col">
+      <span class="eyebrow">Programming</span>
+      <ul>
+        <li>Python <div class="bar" style="--pct:75%"></div></li>
+        <li>Java <div class="bar" style="--pct:65%"></div></li>
+        <li>C++ <div class="bar" style="--pct:60%"></div></li>
+      </ul>
+    </div>
+    <div class="skill-col">
+      <span class="eyebrow">Tools</span>
+      <ul>
+        <li>VS Code <div class="bar" style="--pct:80%"></div></li>
+        <li>Google Suite <div class="bar" style="--pct:85%"></div></li>
+        <li>MS Office Suite <div class="bar" style="--pct:85%"></div></li>
+      </ul>
+    </div>
+    <div class="skill-col">
+      <span class="eyebrow">Languages</span>
+      <ul>
+        <li>Amharic <div class="bar" style="--pct:90%"></div></li>
+        <li>Spanish <div class="bar" style="--pct:60%"></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section reveal" id="contact">
+  <div class="contact-panel">
+    <div>
+      <h2>Let's build something.</h2>
+      <p>Open to research collaborations, team roles, and internship conversations. Based in Marietta, GA — heading to West Lafayette this fall.</p>
+    </div>
+    <div class="contact-links">
+      <a href="mailto:Ethan.Debeb@gmail.com">Email <span>→</span></a>
+      <a href="http://www.linkedin.com/in/ethan-d-715631316">LinkedIn <span>→</span></a>
+      <a href="https://github.com/Debeb01">GitHub <span>→</span></a>
+      <a href="resume.pdf">Resume (PDF) <span>→</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  BUILT WITH SOLIDWORKS DISCIPLINE, NOT WEB FRAMEWORKS · © 2026 ETHAN DEBEB
+</footer>
+
+<script>
+  // scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
