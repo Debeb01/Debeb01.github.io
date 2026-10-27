@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Experience — Ethan Debeb</title>
+<meta name="description" content="Ethan Debeb's professional experience — UAV research at the Kennesaw State University AERO Lab and a Quality Engineer shadow at Porsche North America.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a href="index.html" class="brand">ETHAN DEBEB<span>.</span></a>
+    <div class="nav-links">
+      <a href="index.html">About</a>
+      <a href="experience.html" class="active">Experience</a>
+      <a href="education.html">Education</a>
+      <a href="publications.html">Publications</a>
+      <a href="leadership.html">Leadership</a>
+      <a href="affiliations.html">Affiliations</a>
+      <a href="awards.html">Awards</a>
+    </div>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html">About</a>
+  <a href="experience.html" class="active">Experience</a>
+  <a href="education.html">Education</a>
+  <a href="publications.html">Publications</a>
+  <a href="leadership.html">Leadership</a>
+  <a href="affiliations.html">Affiliations</a>
+  <a href="awards.html">Awards</a>
+</div>
+
+<div class="hero-banner">
+  <img src="purdue-header.png" alt="Purdue University — A Legacy of Innovation, A Future of Discovery. Cradle of Astronauts.">
+</div>
+
+<header class="page-header">
+  <div class="eyebrow">Research & Work</div>
+  <h1>Experience</h1>
+  <p class="dek">Hands-on aerospace research and an industry shadow program, spanning UAV design, computational analysis, and quality engineering.</p>
+</header>
+
+<section class="section" style="border-top:none; padding-top:0;">
+  <div class="card-list">
+
+    <div class="card with-photo">
+      <div class="tag">RESEARCH</div>
+      <div>
+        <h3>Aerospace Research Intern</h3>
+        <p>AERO Lab, Kennesaw State University · Marietta, GA</p>
+        <ul class="bullets">
+          <li>Designed and evaluated a multirotor UAV in SOLIDWORKS, applying computational fluid dynamics (CFD) to analyze lift, drag, and aerodynamic forces and predict aircraft performance prior to build</li>
+          <li>Integrated and evaluated YOLO object-detection models on UAV platforms to identify and count roadway vehicles, supporting computer vision research for traffic monitoring and safety applications</li>
+          <li>Designed a UAV life jacket delivery mechanism in SOLIDWORKS and performed structural stress analysis to verify the commissioned payload remained within the mechanism's load-carrying capacity</li>
+          <li>Contributed to the design, build, and testing of a gravity-powered pumpkin launcher for the 15th Annual Pumpkin Launch competition</li>
+        </ul>
+        <div class="meta">
+          <span>July 2025 – December 2025</span>
+        </div>
+      </div>
+      <div class="photo">
+        <img src="life-jacket-delivery.png" alt="CAD render of the UAV life jacket delivery mechanism designed at the AERO Lab">
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="tag">INDUSTRY</div>
+      <div>
+        <h3>Quality Engineer Shadow</h3>
+        <p>Porsche North America · Atlanta, GA</p>
+        <ul class="bullets">
+          <li>Shadowed five Quality Engineer interns, assisting with vehicle issue identification, diagnostic data review, and root cause analysis</li>
+        </ul>
+        <div class="meta">
+          <span>June 2024</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  © 2026 ETHAN DEBEB · AEROSPACE ENGINEERING, PURDUE UNIVERSITY
+</footer>
+
+<script>
+  const navToggle = document.getElementById('nav-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (navToggle && mobileMenu) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      navToggle.classList.toggle('open', isOpen);
+      navToggle.setAttribute('aria-expanded', isOpen);
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        navToggle.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+</script>
+
+</body>
+</html>
