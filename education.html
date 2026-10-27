@@ -16,9 +16,9 @@
     <a href="index.html" class="brand">ETHAN DEBEB<span>.</span></a>
     <div class="nav-links">
       <a href="index.html">About</a>
-      <a href="education.html">Education</a>
       <a href="experience.html">Experience</a>
       <a href="cad.html">CAD Designs</a>
+      <a href="education.html" class="active">Education</a>
       <a href="publications.html">Publications</a>
       <a href="leadership.html">Leadership</a>
       <a href="affiliations.html">Affiliations</a>
@@ -32,9 +32,9 @@
 
 <div class="mobile-menu" id="mobile-menu">
   <a href="index.html">About</a>
-  <a href="education.html" class="active">Education</a>
   <a href="experience.html">Experience</a>
   <a href="cad.html">CAD Designs</a>
+  <a href="education.html" class="active">Education</a>
   <a href="publications.html">Publications</a>
   <a href="leadership.html">Leadership</a>
   <a href="affiliations.html">Affiliations</a>
@@ -77,14 +77,11 @@
     <div>
       <h3>Wheeler High School</h3>
       <div class="loc">The Center for Advanced Studies, Magnet Program · Marietta, GA</div>
-      <div class="deg">Advanced STEM Magnet Diploma · Unweighted GPA 3.443 Weighted GPA 4.086</div>
+      <div class="deg">High School Diploma · GPA 4.0</div>
       <div class="date">MAY 2026</div>
     </div>
   </div>
 
-  <p class="mono" style="font-size:0.72rem; color: var(--text-dim); margin-top: 8px;">
-   
-  </p>
 </section>
 
 <section class="section">
@@ -114,7 +111,6 @@
       <ul>
         <li>Visual Studio Code <div class="bar" style="--pct:80%"></div></li>
         <li>Google Suite <div class="bar" style="--pct:85%"></div></li>
-        <li>3D Printer <div class="bar" style="--pct:85%"></div></li>
       </ul>
     </div>
   </div>
@@ -191,6 +187,45 @@
       });
     });
   }
+
+  // Logo cleanup: trims blank margins baked into the logo images and, for
+  // light-colored artwork on a transparent background, switches to a dark card
+  // so the name stays readable. Works on the hosted site (same-origin images);
+  // if it can't run, the original image is shown unchanged.
+  document.querySelectorAll('img[data-autotrim]').forEach(function (img) {
+    function trim() {
+      try {
+        var w = img.naturalWidth, h = img.naturalHeight;
+        if (!w || !h) return;
+        var c = document.createElement('canvas'); c.width = w; c.height = h;
+        var ctx = c.getContext('2d'); ctx.drawImage(img, 0, 0);
+        var d = ctx.getImageData(0, 0, w, h).data;
+        var hasAlpha = false, i;
+        for (i = 3; i < d.length; i += 4) { if (d[i] < 250) { hasAlpha = true; break; } }
+        var minX = w, minY = h, maxX = -1, maxY = -1, lum = 0, n = 0;
+        for (var y = 0; y < h; y++) {
+          for (var x = 0; x < w; x++) {
+            i = (y * w + x) * 4;
+            var r = d[i], g = d[i + 1], b = d[i + 2], a = d[i + 3];
+            var isContent = hasAlpha ? a > 20 : !(r > 242 && g > 242 && b > 242);
+            if (isContent) {
+              if (x < minX) minX = x; if (x > maxX) maxX = x;
+              if (y < minY) minY = y; if (y > maxY) maxY = y;
+              lum += (0.299 * r + 0.587 * g + 0.114 * b); n++;
+            }
+          }
+        }
+        if (maxX < 0) return;
+        var pad = 2, cw = Math.min(w, maxX - minX + 1 + pad * 2), ch = Math.min(h, maxY - minY + 1 + pad * 2);
+        var out = document.createElement('canvas'); out.width = cw; out.height = ch;
+        out.getContext('2d').drawImage(c, Math.max(0, minX - pad), Math.max(0, minY - pad), cw, ch, 0, 0, cw, ch);
+        if (hasAlpha && n && (lum / n) > 170) img.parentElement.classList.add('on-dark');
+        img.src = out.toDataURL('image/png');
+        img.removeAttribute('data-autotrim');
+      } catch (err) { /* canvas blocked (e.g. opened from disk): keep original */ }
+    }
+    if (img.complete) trim(); else img.addEventListener('load', trim, { once: true });
+  });
 </script>
 
 </body>
