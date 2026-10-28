@@ -2,160 +2,88 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CAD Designs — Ethan Debeb</title>
-<meta name="description" content="CAD designs by Ethan Debeb in SOLIDWORKS: a UAV life jacket delivery mechanism, the Chipi claw, and the ZeroTolerance drive base.">
+<meta name="description" content="Ethan Debeb's CAD designs in SOLIDWORKS: a UAV life jacket delivery mechanism and FIRST Tech Challenge robot subsystems.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<nav class="site-nav">
-  <div class="site-nav-inner">
-    <a href="index.html" class="brand">ETHAN DEBEB<span>.</span></a>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <img src="purdue-wordmark.png" alt="Purdue University">
+      Ethan Debeb
+    </a>
     <div class="nav-links">
-      <a href="index.html">About</a>
+      <a href="index.html">Home</a>
+      <a href="education.html">Education</a>
       <a href="experience.html">Experience</a>
       <a href="cad.html" class="active">CAD Designs</a>
-      <a href="education.html">Education</a>
       <a href="publications.html">Publications</a>
       <a href="leadership.html">Leadership</a>
       <a href="affiliations.html">Affiliations</a>
       <a href="awards.html">Awards</a>
     </div>
-    <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
   </div>
 </nav>
 
-<div class="mobile-menu" id="mobile-menu">
-  <a href="index.html">About</a>
-  <a href="experience.html">Experience</a>
-  <a href="cad.html" class="active">CAD Designs</a>
-  <a href="education.html">Education</a>
-  <a href="publications.html">Publications</a>
-  <a href="leadership.html">Leadership</a>
-  <a href="affiliations.html">Affiliations</a>
-  <a href="awards.html">Awards</a>
-</div>
-
-<div class="hero-banner">
-  <img src="purdue-header.png" alt="Purdue University — A Legacy of Innovation, A Future of Discovery. Cradle of Astronauts.">
-</div>
-
-<header class="page-header">
-  <div class="eyebrow">Design Portfolio</div>
+<main>
+<header class="page">
+  <div class="label">Design Portfolio</div>
   <h1>CAD Designs</h1>
-  <p class="dek">Mechanical designs modeled in SOLIDWORKS, from a senior capstone UAV payload mechanism to competition robot subsystems. Click any image to view it full size.</p>
+  <p>Mechanical designs I modeled in SOLIDWORKS, from my senior capstone UAV mechanism to competition robot subsystems. Click any image to view it full size.</p>
 </header>
 
-<section class="section" style="border-top:none; padding-top:0;" id="capstone">
-  <div class="section-head">
-    <div><div class="eyebrow">Capstone Research</div><h2>Senior Capstone Project</h2></div>
-    <div class="stage-code mono">SOLIDWORKS · FEA</div>
-  </div>
-
-  <div class="capstone">
-    <div class="side">
-      <div class="cad-media">
-        <a href="life-jacket-delivery.png" target="_blank" rel="noopener" aria-label="Open the Life Jacket Delivery System render full size">
-          <img src="life-jacket-delivery.png" alt="SOLIDWORKS render of the UAV life jacket delivery mechanism">
-        </a>
-      </div>
-      <div class="cad-facts">
-        <div class="row"><span class="k">Project</span><span class="v">Life Jacket Delivery System</span></div>
-        <div class="row"><span class="k">Tools</span><span class="v">SOLIDWORKS, FEA</span></div>
-        <div class="row"><span class="k">Actuation</span><span class="v">MG996R servo, linkage latch</span></div>
-        <div class="row"><span class="k">FEA result</span><span class="v">Allowable stress at 6.506 kg</span></div>
+<section class="first">
+  <div class="grid-3">
+    <div class="card design">
+      <a class="image" href="life-jacket-delivery.png" target="_blank" rel="noopener"><img src="life-jacket-delivery.png" alt="SOLIDWORKS render of the UAV life jacket delivery mechanism"></a>
+      <div class="label">Senior Capstone &middot; 2025–26</div>
+      <h3>Life Jacket Delivery System</h3>
+      <p>Servo-actuated payload release that carries and drops a life jacket from a multirotor UAV. Flight-tested successfully.</p>
+      <div class="facts">
+        <div><span>My role</span><span>Full design and testing</span></div>
+        <div><span>Tools</span><span>SOLIDWORKS, FEA</span></div>
       </div>
     </div>
-
-    <div>
-      <div class="eyebrow">Title</div>
-      <h3>Developing a Life Jacket Delivery System for UAVs</h3>
-      <div class="abstract-label">Abstract</div>
-      <p class="abstract">The purpose of this study was to develop and evaluate a lightweight life jacket delivery system using UAVs, intending to improve response times in drowning emergencies. Existing drowning prevention technologies, such as CCTV surveillance and traditional flotation delivery technologies, are limited by their mobility and have difficulty reaching victims in remote and hard-to-reach areas. To address these gaps, this research designed a servo-actuated payload release mechanism to securely carry and accurately deploy flotation devices from a multi-rotor UAV. The design followed an iterative process, using CAD modeling in SolidWorks to design the iterations. After a final design was chosen based on weight, estimated performance, and estimated durability, the design was tested in the lab with a payload. The final design utilized a linkage-based latch with an MG996R torque servo and successfully released a life jacket in the flight test. To estimate the mechanism&rsquo;s carrying capacity, Finite Element Analysis was performed on the final CAD assembly, showing that the linkage bar reached its allowable stress at a load of 6.506 kg, well below the hypothesized 25 kg limit. This system demonstrates a viable, versatile solution for aerial flotation delivery while supporting further development of UAV rescue technologies.</p>
-      <div class="keywords">
-        <span class="abstract-label">Keywords</span>
-        <span class="credential">drowning prevention technology</span>
-        <span class="credential">finite element analysis</span>
-        <span class="credential">life jacket delivery</span>
-        <span class="credential">UAVs</span>
-        <span class="credential">carrying capacity</span>
+    <div class="card design">
+      <a class="image" href="chipi-claw.png" target="_blank" rel="noopener"><img src="chipi-claw.png" alt="SOLIDWORKS render of the Chipi competition robot"></a>
+      <div class="label">FTC 2024–25 &middot; Into the Deep</div>
+      <h3>Chipi</h3>
+      <p>Competition robot for the Into the Deep season. I owned the design of the claw end effector.</p>
+      <div class="facts">
+        <div><span>My role</span><span>Claw end effector</span></div>
+        <div><span>Tools</span><span>SOLIDWORKS</span></div>
+      </div>
+    </div>
+    <div class="card design">
+      <a class="image" href="zerotolerance.png" target="_blank" rel="noopener"><img src="zerotolerance.png" alt="SOLIDWORKS render of the ZeroTolerance competition robot"></a>
+      <div class="label">FTC 2023–24 &middot; Centerstage</div>
+      <h3>ZeroTolerance</h3>
+      <p>Competition robot for the Centerstage season. I owned the drive base, the chassis the rest of the robot is built on.</p>
+      <div class="facts">
+        <div><span>My role</span><span>Drive base (drivetrain)</span></div>
+        <div><span>Tools</span><span>SOLIDWORKS</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section" id="ftc-robots">
-  <div class="section-head">
-    <div><div class="eyebrow">FIRST Tech Challenge</div><h2>Competition Robot Designs</h2></div>
-    <div class="stage-code mono">TEAM 1002 SURGE · CIRCUITRUNNERS ROBOTICS</div>
-  </div>
-
-  <div class="robot-grid">
-    <div class="robot-card">
-      <div class="cad-media">
-        <a href="chipi-claw.png" target="_blank" rel="noopener" aria-label="Open the Chipi render full size">
-          <img src="chipi-claw.png" alt="SOLIDWORKS render of the Chipi competition robot">
-        </a>
-      </div>
-      <div>
-        <div class="eyebrow">2024&ndash;25 Season &middot; Into the Deep</div>
-        <h3>Chipi</h3>
-        <div class="sub">Competition robot</div>
-      </div>
-      <p>Competition robot for the Into the Deep season. Owned the design of the claw end-effector.</p>
-      <div class="cad-facts">
-        <div class="row"><span class="k">My subsystem</span><span class="v">Claw</span></div>
-        <div class="row"><span class="k">Tools</span><span class="v">SOLIDWORKS</span></div>
-      </div>
-    </div>
-
-    <div class="robot-card">
-      <div class="cad-media">
-        <a href="zerotolerance.png" target="_blank" rel="noopener" aria-label="Open the ZeroTolerance render full size">
-          <img src="zerotolerance.png" alt="SOLIDWORKS render of the ZeroTolerance competition robot">
-        </a>
-      </div>
-      <div>
-        <div class="eyebrow">2023&ndash;24 Season &middot; Centerstage</div>
-        <h3>ZeroTolerance</h3>
-        <div class="sub">Competition robot</div>
-      </div>
-      <p>Competition robot for the Centerstage season. Owned the design of the drive base (drivetrain), the chassis and drive system the rest of the robot is built on.</p>
-      <div class="cad-facts">
-        <div class="row"><span class="k">My subsystem</span><span class="v">Drive base (drivetrain)</span></div>
-        <div class="row"><span class="k">Tools</span><span class="v">SOLIDWORKS</span></div>
-      </div>
+<section>
+  <div class="label">Senior Capstone Abstract</div>
+  <h2>Developing a Life Jacket Delivery System for UAVs</h2>
+  <div class="card">
+    <p>The purpose of this study was to develop and evaluate a lightweight life jacket delivery system using UAVs to improve response times in drowning emergencies. Existing drowning prevention technologies, such as CCTV surveillance and traditional flotation delivery, are limited in mobility and have difficulty reaching victims in remote areas. To address these gaps, this research designed a servo-actuated payload release mechanism to securely carry and accurately deploy flotation devices from a multirotor UAV. The design followed an iterative process, with each iteration modeled in SOLIDWORKS. After a final design was chosen based on weight, estimated performance and estimated durability, it was tested in the lab with a payload. The final design used a linkage-based latch with an MG996R servo and successfully released a life jacket in a flight test. To estimate the mechanism's carrying capacity, finite element analysis was performed on the final CAD assembly, showing that the linkage bar reached its allowable stress at a load of 6.506 kg, well below the hypothesized 25 kg limit. This system demonstrates a viable, versatile solution for aerial flotation delivery and supports further development of UAV rescue technologies.</p>
+    <div class="chips" style="margin-top:18px">
+      <span>Drowning prevention</span><span>Finite element analysis</span><span>Life jacket delivery</span><span>UAVs</span><span>Carrying capacity</span>
     </div>
   </div>
 </section>
+</main>
 
-<footer>
-  © 2026 ETHAN DEBEB · AEROSPACE ENGINEERING, PURDUE UNIVERSITY
-</footer>
-
-<script>
-  const navToggle = document.getElementById('nav-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-  if (navToggle && mobileMenu) {
-    navToggle.addEventListener('click', () => {
-      const isOpen = mobileMenu.classList.toggle('open');
-      navToggle.classList.toggle('open', isOpen);
-      navToggle.setAttribute('aria-expanded', isOpen);
-    });
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.remove('open');
-        navToggle.classList.remove('open');
-        navToggle.setAttribute('aria-expanded', 'false');
-      });
-    });
-  }
-</script>
+<footer>&copy; 2026 Ethan Debeb &middot; First-Year Engineering, Purdue University</footer>
 
 </body>
 </html>

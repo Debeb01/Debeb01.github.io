@@ -2,102 +2,64 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Professional Affiliations — Ethan Debeb</title>
-<meta name="description" content="Ethan Debeb's professional affiliations — National Society of Black Engineers and American Institute of Aeronautics and Astronautics, Purdue University chapters.">
+<title>Affiliations — Ethan Debeb</title>
+<meta name="description" content="Ethan Debeb's professional memberships: AIAA, NSBE and American Mensa.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<nav class="site-nav">
-  <div class="site-nav-inner">
-    <a href="index.html" class="brand">ETHAN DEBEB<span>.</span></a>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <img src="purdue-wordmark.png" alt="Purdue University">
+      Ethan Debeb
+    </a>
     <div class="nav-links">
-      <a href="index.html">About</a>
+      <a href="index.html">Home</a>
       <a href="education.html">Education</a>
       <a href="experience.html">Experience</a>
       <a href="cad.html">CAD Designs</a>
       <a href="publications.html">Publications</a>
       <a href="leadership.html">Leadership</a>
-      <a href="affiliations.html">Affiliations</a>
+      <a href="affiliations.html" class="active">Affiliations</a>
       <a href="awards.html">Awards</a>
     </div>
-    <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
   </div>
 </nav>
 
-<div class="mobile-menu" id="mobile-menu">
-  <a href="index.html">About</a>
-  <a href="experience.html">Experience</a>
-  <a href="cad.html">CAD Designs</a>
-  <a href="education.html">Education</a>
-  <a href="publications.html">Publications</a>
-  <a href="leadership.html">Leadership</a>
-  <a href="affiliations.html" class="active">Affiliations</a>
-  <a href="awards.html">Awards</a>
-</div>
-
-<div class="hero-banner">
-  <img src="purdue-header.png" alt="Purdue University — A Legacy of Innovation, A Future of Discovery. Cradle of Astronauts.">
-</div>
-
-<header class="page-header">
-  <div class="eyebrow">Memberships</div>
+<main>
+<header class="page">
+  <div class="label">Memberships</div>
   <h1>Professional Affiliations</h1>
-  <p class="dek">Student membership in two national aerospace and engineering professional societies.</p>
+  <p>Memberships in national engineering and professional societies.</p>
 </header>
 
-<section class="section" style="border-top:none; padding-top:0;">
-  <div class="card-list">
+<section class="first">
+  <div class="grid-3">
     <div class="card">
-      <div class="tag">MEMBER</div>
-      <div>
-        <h3>National Society of Black Engineers (NSBE)</h3>
-        <p>Purdue University Chapter</p>
-        <div class="meta">
-          <span>NSBE Jr. member since 2022</span>
-        </div>
-      </div>
+      <div class="label">Member</div>
+      <h3>American Institute of Aeronautics and Astronautics (AIAA)</h3>
+      <div class="where">Purdue University Student Branch</div>
+      <div class="date">Member since 2025</div>
     </div>
     <div class="card">
-      <div class="tag">MEMBER</div>
-      <div>
-        <h3>American Institute of Aeronautics and Astronautics (AIAA)</h3>
-        <p>Purdue University Chapter</p>
-        <div class="meta">
-          <span>High school member since 2025</span>
-        </div>
-      </div>
+      <div class="label">Member</div>
+      <h3>National Society of Black Engineers (NSBE)</h3>
+      <div class="where">Purdue University Chapter</div>
+      <div class="date">Member since 2022 (NSBE Jr. in high school)</div>
+    </div>
+    <div class="card">
+      <div class="label">Member</div>
+      <h3>American Mensa</h3>
+      <div class="where">High-IQ society</div>
     </div>
   </div>
 </section>
+</main>
 
-<footer>
-  © 2026 ETHAN DEBEB · AEROSPACE ENGINEERING, PURDUE UNIVERSITY
-</footer>
-
-<script>
-  const navToggle = document.getElementById('nav-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-  if (navToggle && mobileMenu) {
-    navToggle.addEventListener('click', () => {
-      const isOpen = mobileMenu.classList.toggle('open');
-      navToggle.classList.toggle('open', isOpen);
-      navToggle.setAttribute('aria-expanded', isOpen);
-    });
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.remove('open');
-        navToggle.classList.remove('open');
-        navToggle.setAttribute('aria-expanded', 'false');
-      });
-    });
-  }
-</script>
+<footer>&copy; 2026 Ethan Debeb &middot; First-Year Engineering, Purdue University</footer>
 
 </body>
 </html>
