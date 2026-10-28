@@ -340,6 +340,7 @@ img{ max-width:100%; display:block; }
 .cad-tile{ background: var(--panel); border: 1px solid var(--line); border-radius: 4px; overflow:hidden; }
 .cad-tile .thumb{
   aspect-ratio: 4/3;
+  max-height: 300px;
   background: #fff;
   display:flex; align-items:center; justify-content:center;
   overflow:hidden; position:relative;
