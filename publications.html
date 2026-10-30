@@ -1,72 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Publications — Ethan Debeb</title>
-<meta name="description" content="Ethan Debeb's AIAA AVIATION 2026 conference paper and research poster on UAV-based vehicle detection.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="styles.css">
+<title>Publications — Ethan Debeb</title>
 </head>
 <body>
-
-<nav>
+<nav class="site-nav">
   <div class="nav-inner">
-    <a href="index.html" class="brand">
-      <img src="purdue-wordmark.png" alt="Purdue University">
-      Ethan Debeb
-    </a>
+    <a class="brand" href="index.html">Ethan Debeb</a>
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="education.html">Education</a>
       <a href="experience.html">Experience</a>
       <a href="cad.html">CAD Designs</a>
-      <a href="publications.html" class="active">Publications</a>
+      <a href="publications.html">Publications</a>
       <a href="leadership.html">Leadership</a>
-      <a href="affiliations.html">Affiliations</a>
       <a href="awards.html">Awards</a>
     </div>
   </div>
 </nav>
 
-<main>
-<header class="page">
-  <div class="label">Research Output</div>
-  <h1>Publications</h1>
-  <p>Conference research on UAV-based computer vision for real-time traffic analytics.</p>
-</header>
+<main><header class="page-header"><p class="eyebrow">Research Output</p><h1>Publications</h1></header>
+<section><h2>Conference Paper</h2><p class="eyebrow">AIAA AVIATION 2026 Forum</p>
+<h3>Real-Time Vehicle Detection and Enumeration Using Unmanned Aerial Systems</h3>
+<p>A. Khalid, O. Ahmed and E. Debeb · AIAA 2026-4753</p>
+<p>Research on real-time vehicle detection and counting using YOLO-based object detection and aerial imagery from an unmanned aircraft system.</p>
+<p>Presented in San Diego, California · June 8–12, 2026 · <a href="https://doi.org/10.2514/6.2026-4753" target="_blank" rel="noopener">Read the paper (DOI)</a></p></section>
+<section><h2>Research Poster</h2><h3>AI-Assisted Vehicle Detection and Enumeration Using UAS</h3>
+<p>Owais Ahmed, Ethan Debeb and Dr. Adeel Khalid · Kennesaw State University</p>
+<ul><li>Trained YOLOv12s on the VisDrone dataset for car, truck and bus detection.</li><li>Evaluated vehicle-counting accuracy across real-world static scenes and viewing angles.</li><li>Deployed the system on a Skydio X10 UAS with live video streaming.</li></ul>
+<a class="poster-link" href="Vehicle Enumeration Poster.pdf" target="_blank" rel="noopener">View research poster (PDF)</a></section></main>
 
-<section class="first">
-  <h2>Conference Paper</h2>
-  <div class="card">
-    <div class="label">AIAA AVIATION 2026 Forum</div>
-    <h3>Real-Time Vehicle Detection and Enumeration Using Unmanned Aerial Systems</h3>
-    <div class="where">A. Khalid, O. Ahmed and E. Debeb &middot; AIAA 2026-4753</div>
-    <p class="dim">Unmanned aerial systems (UAS) equipped with high-resolution cameras have become powerful tools for large-scale traffic monitoring, infrastructure assessment and urban planning. This research presents a real-time vehicle detection and counting framework that integrates the YOLOv12 object detection model with aerial imagery from a UAS platform, fine-tuned on the VisDrone dataset to handle varying altitudes, lighting conditions and dense urban scenes. Testing demonstrated detection accuracy and frame rates suitable for real-time traffic analytics and aerial surveillance.</p>
-    <div class="date">Presented in San Diego, CA &middot; June 8–12, 2026 &middot; <a href="https://doi.org/10.2514/6.2026-4753" target="_blank" rel="noopener">Read the paper (DOI)</a></div>
-  </div>
-</section>
-
-<section>
-  <h2>Research Poster</h2>
-  <div class="card">
-    <h3>AI-Assisted Vehicle Detection and Enumeration Using UAS</h3>
-    <div class="where">Owais Ahmed, Ethan Debeb and Dr. Adeel Khalid &middot; Department of Industrial and Systems Engineering, Kennesaw State University</div>
-    <ul>
-      <li>Trained YOLOv12s on the VisDrone dataset (car, truck and bus classes), reaching 0.8873 precision and 0.7269 recall on the held-out set</li>
-      <li>Vehicle counts on real-world static scenes had a maximum error of 4% and a minimum of 0.82%</li>
-      <li>Nadir (straight-down) views consistently outperformed tilted views, which still stayed below 7.5% error</li>
-      <li>Deployed on a Skydio X10 UAS with live video streaming to count vehicles in parking lots</li>
-    </ul>
-    <a class="poster" href="poster.jpg" target="_blank" rel="noopener" style="display:block; margin-top:22px">
-      <img src="poster.jpg" alt="Research poster: AI-Assisted Vehicle Detection and Enumeration Using UAS">
-    </a>
-    <p class="dim" style="margin-top:10px; font-size:0.9rem">Click the poster to view it full size.</p>
-  </div>
-</section>
-</main>
-
-<footer>&copy; 2026 Ethan Debeb &middot; First-Year Engineering, Purdue University</footer>
-
+<footer>© 2026 Ethan Debeb · First-Year Engineering, Purdue University</footer>
 </body>
 </html>

@@ -1,89 +1,34 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>CAD Designs — Ethan Debeb</title>
-<meta name="description" content="Ethan Debeb's CAD designs in SOLIDWORKS: a UAV life jacket delivery mechanism and FIRST Tech Challenge robot subsystems.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="styles.css">
+<title>CAD Designs — Ethan Debeb</title>
 </head>
 <body>
-
-<nav>
+<nav class="site-nav">
   <div class="nav-inner">
-    <a href="index.html" class="brand">
-      <img src="purdue-wordmark.png" alt="Purdue University">
-      Ethan Debeb
-    </a>
+    <a class="brand" href="index.html">Ethan Debeb</a>
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="education.html">Education</a>
       <a href="experience.html">Experience</a>
-      <a href="cad.html" class="active">CAD Designs</a>
+      <a href="cad.html">CAD Designs</a>
       <a href="publications.html">Publications</a>
       <a href="leadership.html">Leadership</a>
-      <a href="affiliations.html">Affiliations</a>
       <a href="awards.html">Awards</a>
     </div>
   </div>
 </nav>
 
-<main>
-<header class="page">
-  <div class="label">Design Portfolio</div>
-  <h1>CAD Designs</h1>
-  <p>Mechanical designs I modeled in SOLIDWORKS, from my senior capstone UAV mechanism to competition robot subsystems. Click any image to view it full size.</p>
-</header>
+<main><header class="page-header"><p class="eyebrow">Design Portfolio</p><h1>CAD Designs</h1>
+<p class="lead">Selected mechanical designs modeled in SOLIDWORKS.</p></header>
+<section class="project"><div><p class="eyebrow">Senior Capstone · 2025</p><h2>Life Jacket Delivery System</h2><p>Servo-actuated payload release designed to carry and deploy a life jacket from a multirotor UAV. The final mechanism was evaluated with FEA and successfully flight-tested.</p><p><strong>Role:</strong> Full design and testing<br><strong>Tools:</strong> SOLIDWORKS, FEA</p></div><a href="life-jacket-delivery.png"><img src="life-jacket-delivery.png" alt="CAD model of UAV life jacket delivery system"></a></section>
+<section class="project"><div><p class="eyebrow">FTC 2024–25 · INTO THE DEEP</p><h2>Chipi</h2><p>Competition robot for FIRST Tech Challenge. I designed the claw end effector.</p><p><strong>Tools:</strong> SOLIDWORKS</p></div><a href="chipi-claw.png"><img src="chipi-claw.png" alt="CAD model of Chipi claw"></a></section><figure class="portfolio-photo wide-photo"><img src="ftc-robot-competition.jpg" alt="CircuitRunners FTC 1002 robot competing on a FIRST Tech Challenge field"><figcaption>FTC 1002 competition robot on the field during the FIRST Tech Challenge season.</figcaption></figure>
+<section class="project"><div><p class="eyebrow">FTC 2023–24 · CENTERSTAGE</p><h2>ZeroTolerance</h2><p>Competition robot for FIRST Tech Challenge. I designed the drive base and chassis.</p><p><strong>Tools:</strong> SOLIDWORKS</p></div><a href="zerotolerance.png"><img src="zerotolerance.png" alt="CAD model of ZeroTolerance robot"></a></section>
+<section><h2>Senior Capstone Abstract</h2><p>The project developed and evaluated a lightweight, servo-actuated system for deploying a life jacket from a multirotor UAV. The design was iterated in SOLIDWORKS, tested with a payload and evaluated using finite element analysis. The final linkage-based latch successfully released the life jacket during flight testing.</p></section></main>
 
-<section class="first">
-  <div class="grid-3">
-    <div class="card design">
-      <a class="image" href="life-jacket-delivery.png" target="_blank" rel="noopener"><img src="life-jacket-delivery.png" alt="SOLIDWORKS render of the UAV life jacket delivery mechanism"></a>
-      <div class="label">Senior Capstone &middot; 2025</div>
-      <h3>Life Jacket Delivery System</h3>
-      <p>Servo-actuated payload release that carries and drops a life jacket from a multirotor UAV. Flight-tested successfully.</p>
-      <div class="facts">
-        <div><span>My role</span><span>Full design and testing</span></div>
-        <div><span>Tools</span><span>SOLIDWORKS, FEA</span></div>
-      </div>
-    </div>
-    <div class="card design">
-      <a class="image" href="chipi-claw.png" target="_blank" rel="noopener"><img src="chipi-claw.png" alt="SOLIDWORKS render of the Chipi competition robot"></a>
-      <div class="label">FTC 2024–25 &middot; Into the Deep</div>
-      <h3>Chipi</h3>
-      <p>Competition robot for the Into the Deep season. I owned the design of the claw end effector.</p>
-      <div class="facts">
-        <div><span>My role</span><span>Claw end effector</span></div>
-        <div><span>Tools</span><span>SOLIDWORKS</span></div>
-      </div>
-    </div>
-    <div class="card design">
-      <a class="image" href="zerotolerance.png" target="_blank" rel="noopener"><img src="zerotolerance.png" alt="SOLIDWORKS render of the ZeroTolerance competition robot"></a>
-      <div class="label">FTC 2023–24 &middot; Centerstage</div>
-      <h3>ZeroTolerance</h3>
-      <p>Competition robot for the Centerstage season. I owned the drive base, the chassis the rest of the robot is built on.</p>
-      <div class="facts">
-        <div><span>My role</span><span>Drive base (drivetrain)</span></div>
-        <div><span>Tools</span><span>SOLIDWORKS</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="label">Senior Capstone Abstract</div>
-  <h2>Developing a Life Jacket Delivery System for UAVs</h2>
-  <div class="card">
-    <p>The purpose of this study was to develop and evaluate a lightweight life jacket delivery system using UAVs to improve response times in drowning emergencies. Existing drowning prevention technologies, such as CCTV surveillance and traditional flotation delivery, are limited in mobility and have difficulty reaching victims in remote areas. To address these gaps, this research designed a servo-actuated payload release mechanism to securely carry and accurately deploy flotation devices from a multirotor UAV. The design followed an iterative process, with each iteration modeled in SOLIDWORKS. After a final design was chosen based on weight, estimated performance and estimated durability, it was tested in the lab with a payload. The final design used a linkage-based latch with an MG996R servo and successfully released a life jacket in a flight test. To estimate the mechanism's carrying capacity, finite element analysis was performed on the final CAD assembly, showing that the linkage bar reached its allowable stress at a load of 6.506 kg, well below the hypothesized 25 kg limit. This system demonstrates a viable, versatile solution for aerial flotation delivery and supports further development of UAV rescue technologies.</p>
-    <div class="chips" style="margin-top:18px">
-      <span>Drowning prevention</span><span>Finite element analysis</span><span>Life jacket delivery</span><span>UAVs</span><span>Carrying capacity</span>
-    </div>
-  </div>
-</section>
-</main>
-
-<footer>&copy; 2026 Ethan Debeb &middot; First-Year Engineering, Purdue University</footer>
-
+<footer>© 2026 Ethan Debeb · First-Year Engineering, Purdue University</footer>
 </body>
 </html>

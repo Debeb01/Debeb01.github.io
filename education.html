@@ -1,121 +1,61 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Education — Ethan Debeb</title>
-<meta name="description" content="Ethan Debeb's education at Purdue University and Wheeler High School, with technical skills, coursework and test scores.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="styles.css">
+<title>Education — Ethan Debeb</title>
 </head>
 <body>
-
-<nav>
+<nav class="site-nav">
   <div class="nav-inner">
-    <a href="index.html" class="brand">
-      <img src="purdue-wordmark.png" alt="Purdue University">
-      Ethan Debeb
-    </a>
+    <a class="brand" href="index.html">Ethan Debeb</a>
     <div class="nav-links">
       <a href="index.html">Home</a>
-      <a href="education.html" class="active">Education</a>
+      <a href="education.html">Education</a>
       <a href="experience.html">Experience</a>
       <a href="cad.html">CAD Designs</a>
       <a href="publications.html">Publications</a>
       <a href="leadership.html">Leadership</a>
-      <a href="affiliations.html">Affiliations</a>
       <a href="awards.html">Awards</a>
     </div>
   </div>
 </nav>
 
 <main>
-<header class="page">
-  <div class="label">Academics</div>
-  <h1>Education</h1>
-</header>
-
-<section class="first">
-  <h2>Schools</h2>
-  <div class="card school">
-    <div class="logo black"><img src="purdue-wordmark.png" alt="Purdue University"></div>
-    <div>
-      <h3>Purdue University</h3>
-      <div class="dim">College of Engineering &middot; West Lafayette, IN</div>
-      <p>First-Year Engineering &middot; Intended Major: Aerospace Engineering</p>
-      <p class="dim">Entered with 60 credit hours earned through AP exams</p>
-    </div>
-    <div class="badge">Expected May 2030</div>
-  </div>
-  <div class="card school">
-    <div class="logo"><img src="wheeler-logo.png" alt="Wheeler High School Magnet Program"></div>
-    <div>
-      <h3>Wheeler High School</h3>
-      <div class="dim">Center for Advanced Studies in Science, Math and Technology &middot; Marietta, GA</div>
-      <p>Advanced STEM Magnet Diploma</p>
-      <p class="dim">GPA: 3.443 unweighted &middot; 4.086 weighted</p>
-    </div>
-    <div class="badge">May 2026</div>
-  </div>
-</section>
-
+<header class="page-header"><p class="eyebrow">Academics</p><h1>Education</h1></header>
 <section>
-  <h2>Relevant Coursework</h2>
-  <p class="intro">Advanced courses I took at Wheeler after completing the related AP courses.</p>
-  <div class="chips">
-    <span>Advanced Physics Robotics</span>
-    <span>Differential Equations</span>
-    <span>Research III: Aerospace Engineering</span>
-    <span>Advanced Scientific Research IV</span>
-    <span>Advanced Scientific Internship</span>
+  <div class="school">
+    <img src="purdue-logo.png" alt="Purdue University logo">
+    <div><h2>Purdue University</h2><p>College of Engineering · West Lafayette, IN</p>
+    <p><strong>First-Year Engineering</strong> · Intended Major: Aerospace Engineering</p>
+    <p>Entered with 60 credit hours earned through AP exams · Expected May 2030</p></div>
+  </div>
+  <div class="school">
+    <img src="wheeler-logo.png" alt="Wheeler High School logo">
+    <div><h2>Wheeler High School</h2><p>Center for Advanced Studies in Science, Math and Technology · Marietta, GA</p>
+    <p>Advanced STEM Magnet Diploma · May 2026</p>
+    <p><strong>GPA:</strong> 3.443 unweighted · 4.086 weighted · <a href="awards.html#academic-honors">Academic Honors</a></p>
+    <p><strong>ACT Composite:</strong> 36</p></div>
   </div>
 </section>
-
-<section>
-  <h2>Technical Skills</h2>
-  <div class="grid-2">
-    <div class="card"><div class="label">Programming</div><p>Java, Python, C++</p></div>
-    <div class="card"><div class="label">CAD &amp; Analysis</div><p>SOLIDWORKS, Onshape, Computational Fluid Dynamics (CFD), Finite Element Analysis (FEA)</p></div>
-    <div class="card"><div class="label">Software Tools</div><p>Visual Studio Code, Google Workspace, Microsoft Office</p></div>
-    <div class="card"><div class="label">Languages</div><p>Amharic, Spanish</p></div>
-  </div>
-</section>
-
-<section>
-  <h2>AP Exams</h2>
-  <p class="intro">10 exams, all with scores of 4 or 5.</p>
-  <table>
-    <tr><th>Year</th><th>Exam</th><th class="num">Score</th></tr>
-    <tr><td>2023</td><td>Computer Science Principles</td><td class="num">5</td></tr>
-    <tr><td>2024</td><td>Physics 1</td><td class="num">4</td></tr>
-    <tr><td>2024</td><td>Physics 2</td><td class="num">4</td></tr>
-    <tr><td>2024</td><td>Precalculus</td><td class="num">5</td></tr>
-    <tr><td>2025</td><td>Calculus BC (with AB subscore)</td><td class="num">5</td></tr>
-    <tr><td>2025</td><td>Physics C: Mechanics</td><td class="num">4</td></tr>
-    <tr><td>2025</td><td>United States History</td><td class="num">4</td></tr>
-    <tr><td>2026</td><td>Microeconomics</td><td class="num">4</td></tr>
-    <tr><td>2026</td><td>Psychology</td><td class="num">4</td></tr>
-    <tr><td>2026</td><td>United States Government and Politics</td><td class="num">4</td></tr>
-  </table>
-  <div class="chips" style="margin-top:16px">
-    <span>AP Scholar with Distinction (2025, 2026)</span>
-    <span>AP Scholar with Honor (2024)</span>
-  </div>
-</section>
-
-<section>
-  <h2>Standardized Tests</h2>
-  <table>
-    <tr><th>Test</th><th>Section</th><th class="num">Score</th></tr>
-    <tr><td>ACT</td><td>Composite</td><td class="num">36</td></tr>
-    <tr><td>SAT</td><td>Evidence-Based Reading and Writing</td><td class="num">700</td></tr>
-    <tr><td>SAT</td><td>Math</td><td class="num">740</td></tr>
-    <tr><td>SAT</td><td><strong>Total</strong></td><td class="num"><strong>1440</strong></td></tr>
-  </table>
-</section>
+<section><h2>Relevant Coursework</h2>
+<p>Advanced Physics Robotics · Differential Equations · Research III: Aerospace Engineering · Advanced Scientific Research IV · Advanced Scientific Internship</p></section>
+<section><h2>Technical Skills</h2>
+<div class="detail-grid">
+<div><h3>Programming</h3><p>Java, Python, C++</p></div>
+<div><h3>CAD & Analysis</h3><p>SOLIDWORKS, Onshape, Computational Fluid Dynamics (CFD), Finite Element Analysis (FEA)</p></div>
+<div><h3>Software Tools</h3><p>Visual Studio Code, Google Workspace, Microsoft Office</p></div>
+</div></section>
+<section><h2>AP Exams</h2><p>Completed 10 AP exams with scores of 4 or 5.</p>
+<div class="table-wrap"><table><thead><tr><th>Year</th><th>Exam</th><th>Score</th></tr></thead><tbody>
+<tr><td>2023</td><td>Computer Science Principles</td><td>5</td></tr>
+<tr><td>2024</td><td>Physics 1</td><td>4</td></tr><tr><td>2024</td><td>Physics 2</td><td>4</td></tr><tr><td>2024</td><td>Precalculus</td><td>5</td></tr>
+<tr><td>2025</td><td>Calculus BC (AB subscore: 5)</td><td>5</td></tr><tr><td>2025</td><td>Physics C: Mechanics</td><td>4</td></tr><tr><td>2025</td><td>United States History</td><td>4</td></tr>
+<tr><td>2026</td><td>Microeconomics</td><td>4</td></tr><tr><td>2026</td><td>Psychology</td><td>4</td></tr><tr><td>2026</td><td>United States Government and Politics</td><td>4</td></tr>
+</tbody></table></div></section>
 </main>
 
-<footer>&copy; 2026 Ethan Debeb &middot; First-Year Engineering, Purdue University</footer>
-
+<footer>© 2026 Ethan Debeb · First-Year Engineering, Purdue University</footer>
 </body>
 </html>
