@@ -11,8 +11,6 @@ a:hover{color:#000}
 .nav-links{display:flex;gap:20px;flex-wrap:wrap}
 .nav-links a{color:#333;text-decoration:none;font-size:.94rem}
 .nav-links a:hover{text-decoration:underline}
-.campus-banner{height:128px;overflow:hidden;border-bottom:1px solid var(--line);background:#eee}
-.campus-banner img{width:100%;height:100%;object-fit:cover;object-position:center 54%;display:block}
 main{max-width:var(--max);margin:auto;padding:48px 24px 72px}
 .page-header{max-width:760px;margin-bottom:42px}
 .home-header{margin-bottom:36px}
@@ -57,7 +55,6 @@ footer{border-top:1px solid var(--line);max-width:var(--max);margin:auto;padding
 @media(max-width:760px){
  .nav-inner{align-items:flex-start;flex-direction:column;gap:10px}
  .nav-links{gap:10px 16px}
- .campus-banner{height:86px}
  main{padding-top:34px}
  .about-section{grid-template-columns:1fr;gap:24px}
  .profile{display:flex;align-items:flex-end;gap:14px}
